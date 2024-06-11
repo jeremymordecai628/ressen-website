@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background:yellowgreen;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header .logo img {
+    width: 150px;
+    float: left;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+nav ul li.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li.dropdown:hover .dropdowncontent {
+    display: block;
+}
+
+nav ul li .dropdowncontent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+}
+
+nav ul li .dropdowncontent li {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul li .dropdowncontent li a {
+    color: black;
+}
+
+nav ul li .dropdowncontent li a:hover {
+    background-color: #ddd;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 30px;
+}
+
+section {
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+section img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+section p {
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+}
+
+.slide p {
+    text-align: center;
+    margin-top: 10px;
+}

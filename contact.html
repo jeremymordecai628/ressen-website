@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="path/to/your/logo.png" alt="Logo">
+            <img src="images/LOGO.png" alt="Logo">
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown ">
-                    <a href="about.html"></a>About 
+                    <a href="about.html">About</a> 
                     <ul class="dropdowncontent">
                         <li><a href="about.html#Board of  Directors">Board of Directors</a></li>
                         <li><a href="about.html#School History">School History</a></li>
@@ -31,12 +31,15 @@
                         <li><a href="Performance.html#co-curricular">co-curricular</a></li>
                     </ul>
                 </li>
-                <li><a href="Galary.html"></a>Galary</li>
+                <li><a href="Galary.html">Gallery</a></li>
             </ul>
         </nav>
     </header>
     <h1>Contact Us</h1>
     <p>The following  form will filled by our applicants for further question please vist our social media</p>
+    <div class="text-container">
+        <span id="animated-text"></span>
+    </div>
     <form action="contact-form-handler.php" method="POST" id="contact-form">
         <label for="name">Students Name:</label>
         <input type="text" id="name" name="name" required>
@@ -51,12 +54,35 @@
         <label for="subject">child age :</label>
         <input type="number" id="subject" name="subject" required>
             
-        <label for="message">Grade:</label>
-        <input type="text" id="message" name="message"  required>
+        <label for="Grade">Grade:</label>
+        <input type="text" id="Grade" name="Grade"  required>
+        <label for="message">Write an application:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
             
         <button type="submit">Send Request</button>
      </form>
      <a href="https://www.facebook.com/profile.php?id=61550858577013"target="_blank"><i class="fa fa-facebook fa-5x"></i></a>
+     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const textContainer = document.getElementById("animated-text");
+            const text = "What are you waiting for? Apply now!";
+            const words = text.split(" ");
+            let index = 0;
 
+            function displayNextWord() {
+                if (index < words.length) {
+                    textContainer.innerHTML += words[index] + " ";
+                    index++;
+                    setTimeout(displayNextWord, 500); // Adjust delay between words
+                } else {
+                    textContainer.innerHTML = "";
+                    index = 0;
+                    setTimeout(displayNextWord, 500); // Start over
+                }
+            }
+
+            displayNextWord();
+        });
+    </script>
 </body>
 </html>

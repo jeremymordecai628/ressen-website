@@ -4,8 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfomance</title>
+    <link rel="stylesheet" href="perform.css">
 </head>
 <body>
-    
+    <header>
+        <div class="logo">
+            <img src="images/LOGO.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown ">
+                    <a href="about.html">About</a>
+                    <ul class="dropdowncontent">
+                        <li><a href="about.html#Board of  Directors">Board of Directors</a></li>
+                        <li><a href="about.html#School History">School History</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contancts</a></li>
+                <li class="dropdown">
+                    <a href="Perfomance.html">School Perfomance</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#Academics">Academics</a></li>
+                        <li><a href="#co-curricular">co-curricular</a></li>
+                    </ul>
+                </li>
+                <li><a href="Galary.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="Academics">
+        <h1>Academics</h1>
+        <img src="images/ess1.PNG" alt="We are Excelent">
+        <p>Over the years, the school has placed itself on the academic map within the Trans
+            Nzioa County, with key milestones achieved in that short period. The first national
+            exam of K.C.P.E year 2018, had a mean mark of 323 out of the possible 500.The
+            same good performance has been maintained with leading students scoring over
+            400 marks and with an improvement mean of 344 marks in year 2022 K.C.P.E
+            examinations. The school has hired competent teachers as the director being
+            educationists, she knows the caliber of teachers to have and ensures they are well
+            motivated for good outcomes.</p>
+    </section>
+    <section id="co-curricular">
+        <h1>Co-curricular</h1>
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="images/dance.jpg" style="width:100%">
+            </div>
+            <div class="slide">
+                <img src="images/sports.jpg" style="width:100%">
+            </div>
+        <p>All work and no play makes Jack a dull boy, at Ressen Gardens Education Centre,
+            students are also involved in various co-curriculum activities to ensure we produce
+            all rounded personalities . We have an extensive playground where the kids play
+            and have a good time while also learning social and interpersonal skills. The
+            students engage in a diverse range of co-curricular activities, including the art of
+            music, games and debates. The Centre provides access to a well-equipped music
+            room, and proficient instructors are available to guide students in playing various
+            musical instruments and developing their vocal abilities. The school also
+            participates and shines in Music festivals where they have won several accolades</p>
+    </section>
+    <script>
+        let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+    </script>
 </body>
 </html>
