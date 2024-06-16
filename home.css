@@ -96,28 +96,29 @@ p {
     text-align: center;
     color: #666;
 }
+/* Add this CSS to center the icons */
 #icon {
-    background-color: #a727b8c8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows icons to wrap to the next line if needed */
+    margin: 20px 0; /* Adjust margin as needed */
+}
+
+.icon-link {
     text-align: center;
-}
-
-#icon h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-#icon a {
-    margin: 0 10px;
-    color: #333;
+    margin: 20px; /* Adjust spacing between icons */
     text-decoration: none;
+    color: #333; /* Icon color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#icon  a:hover {
-    color: #d6c938;
+.icon-link i {
+    margin-bottom: 10px; /* Spacing between icon and text */
 }
 
-video {
-    display: block;
-    margin: 20px auto;
-    float: right;
+.icon-link span {
+    font-size: 18px; /* Adjust text size */
 }
