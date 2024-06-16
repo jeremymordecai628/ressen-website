@@ -8,12 +8,12 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #f8f8f8;
+    background-color: yellow;
     border-bottom: 1px solid #ddd;
 }
 
 header .logo img {
-    height: 50px;
+    height: 150px;
 }
 
 nav ul {
