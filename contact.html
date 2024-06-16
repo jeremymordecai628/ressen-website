@@ -5,21 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" href="contact.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="images/LOGO.png" alt="Logo">
+            <img src="images/WhatsApp Image 2024-06-15 at 11.29.15 AM.jpeg" alt="Logo">
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li class="dropdown ">
+                <li class="dropdown">
                     <a href="about.html">About</a> 
-                    <ul class="dropdowncontent">
-                        <li><a href="about.html#Board of  Directors">Board of Directors</a></li>
+                    <ul class="dropdown-content">
+                        <li><a href="about.html#Board of Directors">Board of Directors</a></li>
                         <li><a href="about.html#School History">School History</a></li>
                     </ul>
                 </li>
@@ -36,33 +35,30 @@
         </nav>
     </header>
     <h1>Contact Us</h1>
-    <p>The following  form will filled by our applicants for further question please vist our social media</p>
+    <p>The following form will be filled by our applicants. For further questions, please visit our social media.</p>
     <div class="text-container">
         <span id="animated-text"></span>
     </div>
-    <form action="contact-form-handler.php" method="POST" id="contact-form">
+    <form id="contact-form">
         <label for="name">Students Name:</label>
         <input type="text" id="name" name="name" required>
-        <label for="parent">parent:</label>
+        <label for="parent">Parent:</label>
         <input type="text" id="parent" name="parent" required>
-        <label for="phone No">parent phone No:</label>
-        <input type="tel" id="phone No" name="phone No" required>
-            
+        <label for="phoneNo">Parent Phone No:</label>
+        <input type="tel" id="phoneNo" name="phoneNo" required>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
-            
-        <label for="subject">child age :</label>
+        <label for="subject">Child Age:</label>
         <input type="number" id="subject" name="subject" required>
-            
-        <label for="Grade">Grade:</label>
-        <input type="text" id="Grade" name="Grade"  required>
+        <label for="grade">Grade:</label>
+        <input type="text" id="grade" name="grade" required>
         <label for="message">Write an application:</label>
         <textarea id="message" name="message" rows="4" required></textarea>
-            
         <button type="submit">Send Request</button>
-     </form>
-     <a href="https://www.facebook.com/profile.php?id=61550858577013"target="_blank"><i class="fa fa-facebook fa-5x"></i></a>
-     <script>
+    </form>
+    <div id="response-message"></div>
+    <a href="https://www.facebook.com/profile.php?id=61550858577013" target="_blank"><i class="fa fa-facebook fa-5x"></i></a>
+    <script>
         document.addEventListener("DOMContentLoaded", () => {
             const textContainer = document.getElementById("animated-text");
             const text = "What are you waiting for? Apply now!";
@@ -82,6 +78,25 @@
             }
 
             displayNextWord();
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(this);
+
+            fetch('contact-form-handler.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('response-message').innerHTML = data;
+            })
+            .catch(error => {
+                document.getElementById('response-message').innerHTML = 'There was an error submitting the form.';
+                console.error('Error:', error);
+            });
         });
     </script>
 </body>
